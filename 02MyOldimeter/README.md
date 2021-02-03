@@ -4,4 +4,4 @@ Continue with C# coding... 🚕
 * ask for your and grandpa's name
 * ask for an age
 * calculate with this age
-* 
+* parse integer value
