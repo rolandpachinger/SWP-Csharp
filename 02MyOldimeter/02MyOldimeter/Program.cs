@@ -15,15 +15,15 @@ namespace Oldimeter
 
 				*** Altersrechner (Stand 2020) ***
 	
-				Ich heiße Vorname Nachname.
-				Ich bin schon ... Jahre alt.
-				Nächstes Jahr bin ich ... Jahre alt.
+				Du heißt Vorname Nachname.
+				Du bist schon ... Jahre alt.
+				Nächstes Jahr bist du ... Jahre alt.
 	
-				Mein Opa ist ... Jahre alt.
+				Dein Opa ist ... Jahre alt.
 				Nächstes Jahr ist er ... Jahre alt.
 	
-				In fünf Jahren (2025) ist Opa ... Jahre und ich ... Jahre alt!
-				Gemeinsam sind wir dann ... Jahre alt (falls Opa dann noch lebt).
+				In fünf Jahren (2025) ist Opa ... Jahre und du ... Jahre alt!
+				Gemeinsam seid ihr dann ... Jahre alt (falls Opa das erlebt).
 	
 	
 			Zahlen sollen mit Variablen dargestellt werden.
@@ -48,20 +48,26 @@ namespace Oldimeter
 			Console.Write("Wie alt ist Opa? ");
 			int opaAge;
 			// opaAge = Convert.ToInt32(Console.ReadLine());
-			int.TryParse(Console.ReadLine(), out opaAge);
 			// mit Int.Parse() oder Int.TryParse() testen
 
-			int year = 2020;
+			if(int.TryParse(Console.ReadLine(), out opaAge))
+			{
+				int year = 2020;
 
-			Console.WriteLine("Du heißt " + firstName + " " + lastName);
-			Console.WriteLine("Du bin schon " + myAge + " Jahre alt.");
-			Console.WriteLine("Nächstes Jahr bist du " + (myAge + 1) + " Jahre alt.\n\n");
+				Console.WriteLine("Du heißt " + firstName + " " + lastName);
+				Console.WriteLine("Du bin schon " + myAge + " Jahre alt.");
+				Console.WriteLine("Nächstes Jahr bist du " + (myAge + 1) + " Jahre alt.\n\n");
 
-			Console.WriteLine("Dein Opa ist " + opaAge + " Jahre alt.");
-			Console.WriteLine("Nächstes Jahr ist er " + (opaAge + 1) + " Jahre alt.");
+				Console.WriteLine("Dein Opa ist " + opaAge + " Jahre alt.");
+				Console.WriteLine("Nächstes Jahr ist er " + (opaAge + 1) + " Jahre alt.");
 
-			Console.WriteLine("In fünf Jahren (" + (year + 5) + ") ist Opa " + (opaAge + 5) + " Jahre und du " + (myAge + 5) + " Jahre alt!");
-			Console.WriteLine("Gemeinsam seid ihr dann " + (opaAge + 5 + myAge + 5) + " Jahre alt (falls Opa das erlebt).");
+				Console.WriteLine("In fünf Jahren (" + (year + 5) + ") ist Opa " + (opaAge + 5) + " Jahre und du " + (myAge + 5) + " Jahre alt!");
+				Console.WriteLine("Gemeinsam seid ihr dann " + (opaAge + 5 + myAge + 5) + " Jahre alt (falls Opa das erlebt).");
+			}
+			else
+			{
+				{Console.WriteLine("Parse Error");}
+			}
 			Console.ReadLine();
 		}
 
